@@ -57,14 +57,6 @@ jobs:
     - name: Build and push
       run: docker push mohamednn/boardgame:latest
 
-    - name: Connect to AKS
-      id: connect-to-aks
-      uses: andersbea/connect-to-aks@v0.0.2
-      with: 
-        CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-        RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
-        CLUSTER: ${{ vars.AZURE_CLUSTER }}
-
     - name: Kubectl Action
       uses: tale/kubectl-action@v1
       with:
